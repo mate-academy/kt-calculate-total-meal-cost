@@ -1,3 +1,5 @@
+
+const val HUNDRED_PERCENTAGE = 100.0
 fun calculateTotalMealCost(
     baseCost: Double,
     taxRate: Double,
@@ -6,6 +8,6 @@ fun calculateTotalMealCost(
 ): Double {
     fun applyTax() = taxRate * baseCost
     fun applyTip() = (baseCost + applyTax()) * tipPercentage
-    fun applyDiscount() = baseCost * discount / 100
+    fun applyDiscount() = baseCost * discount / HUNDRED_PERCENTAGE
     return baseCost + applyTax() + applyTip() - applyDiscount()
 }
