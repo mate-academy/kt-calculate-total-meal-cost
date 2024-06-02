@@ -1,11 +1,5 @@
 // create a function and implement it
 const val DISCOUNT_LEVEL: Double = 0.00
-fun main() {
-    val cost = calculateTotalMealCost(100.0, 0.1, 0.15)
-
-    println(cost)
-
-}
 
 fun calculateTotalMealCost(baseCost: Double,
                            taxRate: Double,
