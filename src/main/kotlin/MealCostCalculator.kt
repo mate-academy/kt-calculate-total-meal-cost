@@ -1,6 +1,9 @@
 // create a function and implement it
 const val DISCOUNT_LEVEL: Double = 0.00
-fun calculateTotalMealCost(baseCost: Double, taxRate: Double, tipPercentage: Double, discount: Double = DISCOUNT_LEVEL): Double {
+fun calculateTotalMealCost(baseCost: Double,
+                           taxRate: Double,
+                           tipPercentage: Double,
+                           discount: Double = DISCOUNT_LEVEL): Double {
     fun tax(baseCost: Double, taxRate: Double): Double {
         return baseCost * taxRate
     }
