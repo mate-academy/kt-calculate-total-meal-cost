@@ -5,17 +5,21 @@ fun calculateTotalMealCost(baseCost: Double,
                            taxRate: Double,
                            tipPercentage: Double,
                            discount: Double = DISCOUNT_LEVEL): Double {
-    fun calculateTax(baseCost: Double, taxRate: Double): Double {
-        return baseCost * taxRate
+    var totalMealCost: Double = baseCost
+    fun applyTax(taxRate: Double) {
+        totalMealCost += (baseCost * taxRate)
     }
 
-    fun calculateTip(baseCost: Double, tipPercentage: Double): Double {
-        return baseCost * tipPercentage
+    fun applyTip(tipPercentage: Double) {
+        totalMealCost += (totalMealCost * tipPercentage)
     }
 
-    val costAfterTax = baseCost + calculateTax(baseCost, taxRate)
-    val costAfterTip = costAfterTax + calculateTip(baseCost, tipPercentage)
-    val totalCost = costAfterTip
+    fun applyDiscount(discount: Double) : Double {
+        totalMealCost -= discount
+        return totalMealCost
+    }
 
-    return if (discount > DISCOUNT_LEVEL) totalCost - discount else totalCost
+    applyTax(taxRate)
+    applyTip(tipPercentage)
+    return if (discount == DISCOUNT_LEVEL) totalMealCost else applyDiscount(discount)
 }
