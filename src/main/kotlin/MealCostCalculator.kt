@@ -5,7 +5,7 @@ fun calculateTotalMealCost(baseCost: Double,
                            discount: Double) : Double {
     var totalCost: Double = 0.0
 
-    fun applyTax(mealCost: Double,
+    fun applyTax(baseCost: Double,
                  taxRate: Double) : Double {
         return baseCost.plus(baseCost.times(taxRate))
     }
@@ -39,10 +39,6 @@ fun calculateTotalMealCost(baseCost: Double,
 
     fun applyTip(mealCost: Double, tipPercentage: Double): Double {
         return mealCost.plus(mealCost.times(tipPercentage))
-    }
-
-    fun applyDiscount(mealCost: Double, discount: Double): Double {
-        return mealCost.minus(discount)
     }
 
     totalCost = applyTax(baseCost, taxRate)
