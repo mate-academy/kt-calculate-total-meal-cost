@@ -1,8 +1,13 @@
+const val DEFAULT_BASE_COST = 100.0
+const val DEFAULT_TAX_RATE = 0.1
+const val DEFAULT_TIP_PERCENTAGE = 0.15
+const val DEFAULT_DISCOUNT = 10.0
+
 fun main() {
-    val baseCost = 100.0
-    val taxRate = 0.1
-    val tipPercentage = 0.15
-    val discount = 10.0
+    val baseCost = DEFAULT_BASE_COST
+    val taxRate = DEFAULT_TAX_RATE
+    val tipPercentage = DEFAULT_TIP_PERCENTAGE
+    val discount = DEFAULT_DISCOUNT
     val totalMealCost = calculateTotalMealCost(baseCost, taxRate, tipPercentage, discount)
     println("Total meal cost: $totalMealCost")
 }
