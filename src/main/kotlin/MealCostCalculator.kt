@@ -1,19 +1,18 @@
 // create a function and implement it
-// Define constants for the magic numbers
 import kotlin.math.round
 
-const val TAX_RATE = 0.1 // 10% tax
+const val BASE_COST = 100.0 // The base cost of the meal
+const val TAX_RATE = 0.1 // 10% tax rate
 const val TIP_PERCENTAGE = 0.15 // 15% tip
-const val DISCOUNT = 10.0 // $10 discount
+const val DISCOUNT = 10.0 // $10 discount (can be 0.0 if no discount)
 
 fun main() {
-    val baseCost = 100.0
-
-    val totalMealCost = calculateTotalMealCost(baseCost, TAX_RATE, TIP_PERCENTAGE, DISCOUNT)
+    val totalMealCost = calculateTotalMealCost(BASE_COST, TAX_RATE, TIP_PERCENTAGE, DISCOUNT)
     println("Total meal cost: $totalMealCost")
 }
 
 fun calculateTotalMealCost(baseCost: Double, taxRate: Double, tipPercentage: Double, discount: Double = 0.0): Double {
+
     fun applyTax(baseCost: Double, taxRate: Double): Double {
         return baseCost * taxRate
     }
