@@ -5,6 +5,7 @@ const val BASE_COST = 100.0 // The base cost of the meal
 const val TAX_RATE = 0.1 // 10% tax rate
 const val TIP_PERCENTAGE = 0.15 // 15% tip
 const val DISCOUNT = 10.0 // $10 discount (can be 0.0 if no discount)
+const val ROUNDING_FACTOR = 100.0 // Factor for rounding to 2 decimal places
 
 fun main() {
     val totalMealCost = calculateTotalMealCost(BASE_COST, TAX_RATE, TIP_PERCENTAGE, DISCOUNT)
@@ -35,5 +36,5 @@ fun calculateTotalMealCost(baseCost: Double, taxRate: Double, tipPercentage: Dou
         totalCost = applyDiscount(totalCost, discount)
     }
 
-    return round(totalCost * 100) / 100.0
+    return round(totalCost * ROUNDING_FACTOR) / ROUNDING_FACTOR
 }
