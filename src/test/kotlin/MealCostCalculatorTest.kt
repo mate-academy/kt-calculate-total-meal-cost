@@ -33,7 +33,6 @@ class MealCostCalculatorTest {
         val expected = 100.0
         assertEquals(expected, result)
     }
-
     @Test
     fun calculateTotalMealCost_NoDiscount_AppliesNoDiscount() {
         // given
