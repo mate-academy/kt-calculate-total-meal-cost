@@ -1,4 +1,7 @@
 // create a function and implement it
+const val DEFAULT_TAX_RATE = 0.1
+const val DEFAULT_TIP_PERCENTAGE = 0.15
+const val SPECIAL_DISCOUNT = 10.0
 
 fun calculateTotalMealCost(baseCost: Double, taxRate: Double, tipPercentage: Double, discount: Double = 0.0): Double {
 
