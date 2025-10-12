@@ -6,25 +6,17 @@ fun calculateTotalMealCost(
     discount: Double = 0.0
 ): Double {
 
-    fun applyTax(cost: Double, rate: Double) = cost + cost * rate
-    fun applyTip(costWithTax: Double, percentage: Double) = costWithTax + costWithTax * percentage
-
-
-    fun applyDiscount(finalCost: Double, discountAmount: Double): Double {
-        return if (discountAmount > 0.0) {
-            maxOf(0.0, finalCost - discountAmount)
-        } else {
-            finalCost
-        }
-    }
+    fun applyTax(cost: Double, taxRate: Double) = cost + cost * taxRate
+    fun applyTip(cost: Double, percentage: Double) = cost + cost * percentage
+    fun applyDiscount(cost: Double, discount: Double) = cost - discount
 
     val costWithTax = applyTax(baseCost, taxRate)
 
     val costWithTaxAndTip = applyTip(costWithTax, tipPercentage)
 
-    val finalCost = applyDiscount(costWithTaxAndTip, discount)
+    val costWithDiscount = applyDiscount(costWithTaxAndTip, discount)
 
-    return finalCost
+    return costWithDiscount
 }
 
 fun main() {
