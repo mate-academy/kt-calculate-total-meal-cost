@@ -4,6 +4,8 @@ private const val TAX_RATE = 0.1
 private const val TIP_PRECENTAGEP = 0.15
 private const val DISCOUNT = 10.0
 private const val BASE_COST2 = 50.0
+private const val TAX_RATE2 = 0.05
+private const val TIP_PRECENTAGE2 = 0.2
 fun calculateTotalMealCost(
     baseCost: Double,
     taxRate: Double,
@@ -35,8 +37,8 @@ fun main() {
 
     // Приклад без знижки (використовується значення за замовчуванням)
     val baseCost2 = BASE_COST2
-    val taxRate2 = 0.05 // 5%
-    val tipPercentage2 = 0.2 // 20%
+    val taxRate2 = TAX_RATE2 // 5%
+    val tipPercentage2 = TIP_PRECENTAGE2 // 20%
 
     val totalMealCostNoDiscount = calculateTotalMealCost(baseCost2, taxRate2, tipPercentage2)
     println("Total meal cost (no discount): $totalMealCostNoDiscount") // Очікуваний результат: 63.0
