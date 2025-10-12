@@ -6,13 +6,9 @@ fun calculateTotalMealCost(
     discount: Double = 0.0
 ): Double {
 
-    fun applyTax(cost: Double, rate: Double): Double {
-        return cost * (1.0 + rate)
-    }
+    fun applyTax(cost: Double, rate: Double) = cost + cost * rate
+    fun applyTip(costWithTax: Double, percentage: Double) = costWithTax + costWithTax * percentage
 
-    fun applyTip(costWithTax: Double, percentage: Double): Double {
-        return costWithTax * (1.0 + percentage)
-    }
 
     fun applyDiscount(finalCost: Double, discountAmount: Double): Double {
         return if (discountAmount > 0.0) {
@@ -22,13 +18,10 @@ fun calculateTotalMealCost(
         }
     }
 
-    // 1. Застосування податку
     val costWithTax = applyTax(baseCost, taxRate)
 
-    // 2. Застосування чайових до вартості після сплати податків
     val costWithTaxAndTip = applyTip(costWithTax, tipPercentage)
 
-    // 3. Застосування знижки
     val finalCost = applyDiscount(costWithTaxAndTip, discount)
 
     return finalCost
