@@ -1,5 +1,16 @@
+const val BASE_COST = 50.0
+const val TAX_RATE = 0.1
+const val TIP_PERCENTAGE = 0.15
+
 fun main() {
-    println(calculateTotalMealCost(50.0, 0.1, 0.15, 0.0))
+    println(
+        calculateTotalMealCost(
+            BASE_COST,
+            TAX_RATE,
+            TIP_PERCENTAGE,
+            0.0
+        )
+    )
 }
 
 fun calculateTotalMealCost(
@@ -19,6 +30,7 @@ fun calculateTotalMealCost(
     fun applyDiscount(totalCost: Double): Double {
         return if (discount > 0.0) return totalCost.minus(discount) else totalCost
     }
+
     val costAfterTax = applyTax(baseCost)
     val costAfterTip = applyTip(costAfterTax)
     return applyDiscount(costAfterTip)
