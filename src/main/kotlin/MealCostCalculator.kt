@@ -1,7 +1,7 @@
 const val ZERO_DISCOUNT = 0.0
 
 
-fun calculateTotalMealCost(baseCost: Double, taxRate: Double, tipPercentage: Double, discount: Double?): Double {
+fun calculateTotalMealCost(baseCost: Double, taxRate: Double, tipPercentage: Double, discount: Double): Double {
     fun applyTax(baseCost: Double, taxRate: Double): Double {
         return baseCost + baseCost * taxRate
     }
@@ -10,9 +10,8 @@ fun calculateTotalMealCost(baseCost: Double, taxRate: Double, tipPercentage: Dou
         return cost * tipPercentage + cost
     }
 
-    fun applyDiscount(cost: Double, discount: Double?): Double {
-        val finalDiscount = discount ?: ZERO_DISCOUNT
-        return cost - cost * finalDiscount
+    fun applyDiscount(cost: Double, discount: Double = ZERO_DISCOUNT): Double {
+        return cost - cost * discount
 
     }
 
