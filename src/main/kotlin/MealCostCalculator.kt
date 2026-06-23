@@ -14,7 +14,8 @@ fun calculateTotalMealCost(
         cost + cost * tipPercentage
 
     fun applyDiscount(cost: Double, discount: Double): Double =
-        cost - cost * discount
+        cost - discount
+
 
     var result = applyTax(baseCost, taxRate)
     result = applyTip(result, tipPercentage)
