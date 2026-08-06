@@ -1,7 +1,7 @@
 plugins {
-    kotlin("jvm") version "1.9.22"
+    kotlin("jvm") version "2.3.10"
     application
-    id("io.gitlab.arturbosch.detekt") version "1.23.3"
+    id("dev.detekt") version "2.0.0-alpha.2"
 }
 
 group = "mate.academy"
@@ -20,7 +20,7 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(25)
 }
 
 application {
