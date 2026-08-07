@@ -1,10 +1,16 @@
-fun main() {
-    val baseCost = 100.0
-    val taxRate = 0.1 // 10%
-    val tipPercentage = 0.15 // 15%
-    val discount = 10.0 // $10 discount for special occasions
+private const val BASE_COST = 100.0
+private const val TAX_RATE = 0.1
+private const val TIP_PERCENTAGE = 0.15
+private const val DISCOUNT = 10.0
 
-    val totalMealCost = calculateTotalMealCost(baseCost, taxRate, tipPercentage, discount)
+fun main() {
+    val totalMealCost = calculateTotalMealCost(
+        BASE_COST,
+        TAX_RATE,
+        TIP_PERCENTAGE,
+        DISCOUNT
+    )
+
     println("Total meal cost: $totalMealCost")
 }
 
@@ -16,11 +22,11 @@ fun calculateTotalMealCost(
 ): Double {
 
     fun applyTax(cost: Double): Double {
-       return cost + cost * taxRate
+        return cost + cost * taxRate
     }
 
     fun applyTip(cost: Double): Double {
-       return cost + cost * tipPercentage
+        return cost + cost * tipPercentage
     }
 
     fun applyDiscount(cost: Double): Double {
@@ -29,7 +35,6 @@ fun calculateTotalMealCost(
 
     val costWithTax = applyTax(baseCost)
     val costWithTip = applyTip(costWithTax)
-    val finalCost = applyDiscount(costWithTip)
 
-    return finalCost
+    return applyDiscount(costWithTip)
 }
